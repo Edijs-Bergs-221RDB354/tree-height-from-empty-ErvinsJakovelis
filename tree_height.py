@@ -13,8 +13,6 @@ def compute_height(n, parents):
     apskatitie =np.zeros(n)
     for i in range(n):
         apskatitie[vertiba] = 1
-        print(vertiba)
-        print(apskatitie)
         if height[vertiba] != 0:
             return np.count_nonzero(apskatitie)
         height[vertiba] = 1
@@ -43,6 +41,7 @@ def main():
     if 'I' in ievade:
         n = int(input())
         parents = np.array(list(map(int, input().split())))
+        print(compute_height(n, parents))
     # let user input file name to use, don't allow file names with letter a
     # account for github input inprecision
     # input number of elements
