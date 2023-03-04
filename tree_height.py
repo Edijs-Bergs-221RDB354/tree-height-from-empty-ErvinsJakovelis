@@ -1,5 +1,3 @@
-# python3
-
 import sys
 import threading
 import numpy as np
@@ -11,21 +9,25 @@ def compute_height(n, parents):
     # Write this function
     vertiba=0
     max_height = 0
-    apskatitie =np.zeros(n)
+    
+    apskatitie = np.zeros(n)
     for i in range(n):
-        vertiba=i
-        height = np.zeros(n)
+        
         if(apskatitie[i] ==0):
-            while(vertiba >= 0 ):
+            vertiba=i
+            height = np.zeros(n)
+            count =0
+            while(vertiba >= 0 and height[vertiba] == 0):
                 apskatitie[vertiba] = 1
                 height[vertiba] = 1
-            
-                for m in range (n):
-                    if (m != vertiba and height[m] !=0):
-                        height[m] +=1
-                if (np.max(height) > max_height):
-                    max_height = np.max(height)
+                count+=1
                 vertiba = parents[vertiba]
+            # for m in range (n):
+            #     if (m != vertiba and height[m] !=0):
+            #         height[m] +=count
+                
+            if (count > max_height):
+                max_height = count
         # print(max_height)
         # print(i)
         # apskatitie[vertiba] = 1
@@ -70,4 +72,3 @@ def main():
 sys.setrecursionlimit(10**7)  # max depth of recursion
 threading.stack_size(2**27)   # new thread will get stack of such size
 threading.Thread(target=main).start()
-
