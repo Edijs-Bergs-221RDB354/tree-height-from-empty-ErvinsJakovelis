@@ -47,14 +47,14 @@ def compute_height(n, parents):
 def main():
     # implement input form keyboard and from files
     ievade = input()
-#     if 'F' in ievade:
-#         path = input()
-#         path = "test/" + path
-#         if 'a' not in path:
-#             with open(path, "r") as f:
-#                     n = int(f.readline())
-#                     parents = np.array(list(map(int, f.readline().split())))
-#                     print(compute_height(n, parents))
+    if 'F' in ievade:
+        path = input()
+        path = "test/" + path
+        if 'a' not in path:
+            with open(path, "r") as f:
+                    n = int(f.readline())
+                    parents = np.array(list(map(int, f.readline().split())))
+                    print(compute_height(n, parents))
     if 'I' in ievade:
         n = int(input())
         parents = np.array(list(map(int, input().split())))
